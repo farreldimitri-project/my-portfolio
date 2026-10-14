@@ -1,0 +1,412 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home & Thanks */
+body.no-scroll {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1; /* di belakang konten */
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: rgba(216, 180, 254, 0.3);
+  border-radius: 50%;
+  animation: bubbleUp 10s linear infinite;
+}
+
+/* variasi ukuran & posisi */
+.bubbles span:nth-child(1) {
+  left: 10%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 12s;
+}
+.bubbles span:nth-child(2) {
+  left: 20%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 18s;
+}
+.bubbles span:nth-child(3) {
+  left: 35%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 15s;
+}
+.bubbles span:nth-child(4) {
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 10s;
+}
+.bubbles span:nth-child(5) {
+  left: 65%;
+  width: 35px;
+  height: 35px;
+  animation-duration: 20s;
+}
+.bubbles span:nth-child(6) {
+  left: 80%;
+  width: 28px;
+  height: 28px;
+  animation-duration: 14s;
+}
+.bubbles span:nth-child(7) {
+  left: 90%;
+  width: 22px;
+  height: 22px;
+  animation-duration: 11s;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Animasi scale-in */
+.animate-scale {
+  transform: scale(0.5);
+  opacity: 0;
+  animation: scaleIn 2s ease forwards;
+}
+
+.animate-scale:nth-child(1) {
+  animation-delay: 0.2s;
+} /* h1 */
+.animate-scale:nth-child(2) {
+  animation-delay: 0.4s;
+} /* p */
+.animate-scale:nth-child(3) {
+  animation-delay: 0.6s;
+} /* button */
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Body */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #170027;
+  background-size: 800% 800%; /* ukuran besar supaya bisa bergerak */
+  color: #f5f5f5;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Section Tentang Saya */
+.tentang-saya {
+  padding: 40px 20px; /* padding section tetap stabil */
+  text-align: center;
+}
+
+/* 3D Effect*/
+.image-effect {
+  width: 500px; /* ukuran tetap */
+  margin: 0 auto 20px; /* jarak bawah */
+  perspective: 1000px; /* untuk efek 3D */
+}
+
+.image-effect img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+/* Scroll Reveal */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Home Page */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* penuh layar */
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 125px;
+  color: #b066ff;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 25px;
+  color: #e0d7ff;
+  max-width: 1000px;
+  margin-bottom: 50px;
+}
+
+.btn-portfolio {
+  background: #b066ff;
+  color: #2e003e;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 25px 60px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-portfolio:hover {
+  background: #5b00bc;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #5b00bc; /* efek glow ungu */
+  outline: none; /* hilangkan outline default */
+}
+
+/* Button Berdenyut */
+.pulse {
+  box-shadow:
+    0 0 20px #d8b4fe,
+    0 0 40px #b57edc;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#typing-text {
+  display: inline-block;
+  min-height: 1em; /* jaga tinggi baris */
+  min-width: 250px; /* jaga lebar supaya tidak geser */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #b066ff; /* soft purple */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #e0d7ff;
+}
+
+header hr {
+  border: none;
+  height: 2px;
+  background: #b066ff;
+  width: 60%;
+  margin: 15px auto;
+}
+
+/* Section */
+section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+  text-align: left;
+  color: #b066ff;
+  margin-bottom: 15px;
+  border-left: 5px solid #b066ff;
+  padding-left: 10px;
+}
+
+section p {
+  text-align: left;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+/* Gambar */
+section img {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th,
+table td {
+  border: 1px solid #b066ff;
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  background: #b066ff;
+  color: #2e003e;
+  font-weight: bold;
+}
+
+table td {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Form */
+form label {
+  font-weight: bold;
+  color: #b066ff;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #b066ff37;
+  color: #fff;
+}
+
+form input:focus,
+form textarea:focus {
+  background: #b066ff37;
+  box-shadow: 0 0 25px #7b00fe; /* efek glow ungu */
+  outline: none;
+}
+
+form button {
+  background: #b066ff;
+  color: #2e003e;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #5b00bc;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #5b00bc;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+footer hr {
+  border: none;
+  height: 2px;
+  background: #b066ff;
+  width: 50%;
+  margin: 15px auto;
+}
+
+/* Chart Container */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#myChart {
+  width: 650px !important;
+  height: 600px !important;
+}
+
+/* Thanks Page */
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* penuh layar */
+  text-align: center;
+}
+
+.thanks h1 {
+  font-size: 125px;
+  color: #b066ff;
+  margin-bottom: 20px;
+}
+
+.thanks p {
+  font-size: 25px;
+  color: #e0d7ff;
+  max-width: 1000px;
+  margin-bottom: 50px;
+}
+
+.btn-back {
+  background: #b066ff;
+  color: #2e003e;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 25px 60px;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #5b00bc;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #5b00bc;
+  outline: none;
+}
